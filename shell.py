@@ -2,6 +2,7 @@
 
 import json
 import os
+import time
 
 from wizard.core.wrappers import digitalocean
 
@@ -13,12 +14,13 @@ def run():
     vendor_choice = input('Vendor: ').lower()
     if vendor_choice in iaas_platform:
         if vendor_choice in aws_lightsail:
-            pass # TODO
+            pass                                                                 # FIXME
         elif vendor_choice in digital_ocean:
-            print(digitalocean.create_cluster())
-            # os.system(digitalocean.create_cluster())
+            os.system('{unix_command} > build-{timestamp_utc}.json'
+                        .format(unix_command=digitalocean.create_cluster(), \
+                                timestamp_utc=time.time()))
     else:
-        pass # TODO
+        pass                                                                     # FIXME
 
 
 if __name__ == '__main__':
