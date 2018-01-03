@@ -86,7 +86,7 @@ def create_cluster():
     api_data['region'] = str(valid_ran_code(input('RAN code: ')))
     api_data['size']   = str(valid_ram_size(input('RAM size: ')))
     api_data['image']  = str(valid_os_image(input('OS image: ')))
-    # api_data['ssh_keys'] =                                                     # FIXME
+    api_data['ssh_keys'] = ['17083582']
     # api_data['backups'] =                                                      # FIXME
     # api_data['ipv6'] =                                                         # FIXME
     # api_data['user_data'] =                                                    # FIXME
