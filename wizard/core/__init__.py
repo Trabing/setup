@@ -132,7 +132,7 @@ def spinup_server(email, host, hostname, username, password, port):
                         Do you want to continue with the credentials that you  \
                         submitted? Yes or no? ')
 
-                    if str(use_submitted_credentials.lower()) is in acceptable_inputs:
+                    if str(use_submitted_credentials.lower()) in acceptable_inputs:
 
                         if str(use_submitted_credentials.lower()) == '1' or "y" or 'yes' or "True":
                             os.system('scp instance/credentials.dsv root@{host}:/home/{username}/'.format(host=host, username=username))
@@ -142,7 +142,7 @@ def spinup_server(email, host, hostname, username, password, port):
                                 overwrite with the credentials that\'re stored? \
                                 Yes or no? ')
 
-                            if str(overwrite_stored_credentials.lower()) is in acceptable_inputs:
+                            if str(overwrite_stored_credentials.lower()) in acceptable_inputs:
 
                                 if str(overwrite_stored_credentials.lower()) == '1' or "y" or 'yes' or "True":
                                     with open('instance/credentials.dsv', "w") as f:
